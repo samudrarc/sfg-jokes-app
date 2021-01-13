@@ -1,13 +1,14 @@
 package guru.springframework.jokesapp.sfgjokesapp.services;
 
+import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 import org.springframework.stereotype.Service;
 
 @Service
 public class JokesGeneratorService {
-    private ChuckNorrisQuotes quotes;
+    private final ChuckNorrisQuotes quotes;
 
-    public JokesGeneratorService(ChuckNorrisQuotes quotes) {
-        this.quotes = quotes;
+    public JokesGeneratorService() {
+        this.quotes = new ChuckNorrisQuotes();
     }
 
     public String getJoke() {
